@@ -1,0 +1,35 @@
+# google-capstone-project
+This case study is for the capston project in the Google Data Analytics Certificate. 
+
+#Ask
+Cyclistic is a bike share program founded in 2016. To seek future growth, this program is trying to covert casual riders to annual members because annual members are much more profitable. The key stakeholders are Lily Morena, the director of marketing and my manager and the Cyclistic Executive team which will approve or disapprove the proposed marketing program. I am also working closely with the Cyclist marketing analytics team as in this scenario I am a junior analyst of the marketing analytics team.
+
+This analysis is aim to answer a business question: How do annual members and casual riders use Cyclistic bikes differently?
+
+#Prepare
+For the purpose of this case study, we are using the data made available by Motivate International Inc. under this license https://ride.divvybikes.com/data-license-agreement.
+The data are organized by month and I downloaded the data from 2021 October to 2022 September.Within each month, the data are organized by each individual ride with detailed information pertaining to each ride. This ensured the data to be current and comprehensive.
+
+#Process
+- Download Oct 2021 - Sept 2022 data
+- Unzip the files
+- Open each file in excel
+  - set started_at and ended_at to date format, with time
+- Add the following columns to each file
+  - ride_length: calculated by subtracting the column "started_at" from the column "ended_at" and format as HH:MM:SS
+  - day_of_week: using WEEKDAY command, for example, = WEEKDAY(C2,2).I chose the 2 optioin to represent Monday as the 1st day of the week and Sunday as the 7th day of the week.
+  - date: copying the "started_at" column and set the data format, to date, yyyy-mm-dd
+  - day: using the DAY command, =DAY(date)
+  - month: using the MONTH command, = MONTH(date)
+  - year: using the YEAR command, = YEAR(date)
+- Save all the edited csv files as csv in a subfolder called "Edited CSV File", which is now ready to import into R.
+
+#Analyze
+I chose R for analyzing the data as it is easiest to wrangle data and is able to handle how big the data sets are.
+
+Here are the key insights that emerged from the analysis:
+Observation1: casual riders have greater mean, median and max of ride length comparing to members.
+Observation2: casual riders have greater mean of ride length for each day of the week comparing to members.
+Observation3: Members take more rides on weekdays compared to casual riders. Casual riders take more rides on weekends comared to members.
+Observation4: Members take more rides on weekdays compared to weekends. Casual riders take more rides on weekends compared to weekdays.
+
